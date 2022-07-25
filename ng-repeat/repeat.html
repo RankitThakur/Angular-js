@@ -1,0 +1,33 @@
+<html ng-app="myRep">
+  <head>
+    <title>Angular js </title>
+    <script src="angularjs.js"></script>
+    <script src="ng-repeatModules.js"></script>
+  </head>
+  <body>
+    <div ng-controller="ngRepController">
+      <ul>
+        <li ng-repeat="data in arr">
+          {{data}}
+        </li>
+      </ul>
+      <ul>
+        <li ng-repeat="(x,y) in obj">
+          {{x}} = {{y}}
+        </li>
+      </ul>
+      <table border="1">
+        <tr>
+          <th>name</th>
+          <th>age </th>
+          <th>gen</th>
+        </tr>
+        <tr ng-repeat="iteam in objArr | orderBy: 'age': reverse">
+          <td>{{iteam.name | uppercase}}</td>
+          <td>{{iteam.age}}</td>
+          <td>{{iteam.gen}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

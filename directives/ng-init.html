@@ -1,0 +1,38 @@
+<!-- ng-model -->
+<html ng-app>
+  <head>
+    <title>Angular js</title>
+    <script src="angularjs.js"></script>
+  </head>
+  <body>
+    <div ng-init="name='Rankit' age=24;">
+        <h1 ng-bind="name"></h1>
+        <h2 ng-bind="age"></h2>
+    </div>
+
+    <div ng-init="name_arr=['23','rankit','ajay']">
+        <h1>{{name_arr[1]}}</h1>
+    </div>
+
+    <div ng-init="name_obj={name:'rankit',age:24}">
+        <h1>{{name_obj.age}}</h1>
+    </div>
+
+    <div ng-init="name_obj2=[
+        {name:'rankit',age:24},
+        {name:'ANKIT',age:24},
+        {name:'SHUBHAM',age:24},
+        {name:'OMI',age:24}
+        ]">
+        <h1>{{name_obj2[2].name}}</h1>
+    </div>
+    <!-- ng-init and ng model -->
+    <div ng-init= "quantity= ; price= ">
+        quantity: <input type="number" ng-model="quantity">
+        <br><br>
+        price: <input type="number" ng-model="price">
+        <h1>Total Amount: {{ quantity*price }}</h1>
+
+    </div>
+  </body>
+</html> 

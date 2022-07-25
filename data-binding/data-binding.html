@@ -1,0 +1,16 @@
+<html ng-app="myDataMod">
+  <head>
+    <title>Angular js </title>
+    <script src="angularjs.js"></script>
+    <script src="dataModules.js"></script>
+  </head>
+  <body>
+    <div ng-controller="myDataController">
+      <h1 ng-bind="name"></h1>
+    </div>
+    <div ng-controller="myDataController">
+        <input type="text" ng-model="name2"><br>
+        <h1>{{name2}}</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!-- ng-model -->
+<html ng-app>
+  <head>
+    <title>Angular js</title>
+    <script src="angularjs.js"></script>
+    <!-- css area  start-->
+    <style>
+        h1 {
+            background-color: {{color}} ;
+            font-size: {{size}}px;     
+            /* color: {{color}}; */
+        }
+        body{
+            background-color: {{color_sel}};
+            font-size: {{text_size}}
+        }
+    </style>
+    <!-- css area close -->
+
+  </head>
+  <body>
+    <div>
+        color: <input type="text" placeholder="Enter your name" ng-model="color"><br><br>
+        name:  <input type="text" placeholder="Enter your name" ng-model="name"><br><br>
+        Font Size:  <input type="text" placeholder="Enter your name" ng-model="size"><br><br>
+        <br><br>
+        <!-- Ng-bind -->
+        <h1 ng-bind="name" mg-model ="color"></h1>
+    </div>
+    <div>
+        <select ng-model="color_sel">
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+        </select>
+        Select text:<select ng-model="text_size">
+            <option value="2px">2px</option>
+            <option value="10px">10px</option>
+            <option value="20px">20px</option>
+        </select>
+    </div>
+  </body>
+</html>
