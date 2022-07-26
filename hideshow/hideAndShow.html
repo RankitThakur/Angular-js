@@ -1,0 +1,29 @@
+<html ng-app="myHide">
+  <head>
+    <title>Angular js </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="hideModules.js"></script>
+  </head>
+  <body>
+    <div ng-controller="myHideShow">
+      <p><input type="checkbox" ng-model="check">show</p>
+      <table border="1">
+        <tr>
+          <th>color</th>
+          <th>type</th>
+          <th>registration</th>
+          <th>capacity</th>
+        </tr>
+        <tr ng-repeat="iteams in cars">
+          <td>{{iteams.color}}</td>
+          <td>{{iteams.type}}</td>
+          <td>{{iteams.registration}}</td>
+          <td ng-hide="check">{{iteams.capacity}}</td>
+          <td ng-show="check">********</td>
+        </tr>
+        <div ng-include="'/filter/filter.html'">
+        </div>
+      </table>
+    </div>
+  </body>
+</html>

@@ -28,6 +28,11 @@
           <td>{{iteam.gen}}</td>
         </tr>
       </table>
+      <ul>
+        <li ng-repeat="new  in arr | filter:'rankit'">
+          {{new}}
+        </li>
+      </ul>
     </div>
   </body>
 </html>

@@ -1,0 +1,19 @@
+<html ng-app="myDataMod2">
+  <head>
+    <title>Angular js </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="eventModules.js"></script>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <div ng-controller="myDataController2">
+      <button ng-click="number=number+1">Submit</button><br>
+      <button ng-click="myFun()">ALERT</button><br>
+      <button ng-dblclick="myFun()">ALERT</button><br>
+      <button ng-mosueover="myFun()">ALERT</button><br>
+      <textarea ng-change="myFun2()" ng-model="val"></textarea>
+      <h1>{{val}}</h1>
+			<h1>{{number}}</h1>
+    </div>
+  </body>
+</html>
