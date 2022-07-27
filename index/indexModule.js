@@ -1,4 +1,4 @@
-var app = angular.module("myModData", [ "ngRoute","show" ]);
+var app = angular.module("myModData", [ "ngRoute"]);
 app.config(
   [
    "$routeProvider", 
@@ -7,7 +7,7 @@ app.config(
       .when("/hideAndShow", 
       {
         templateUrl:"/hideshow/hideAndShow.html",
-        module: "myHide"
+        controller: "myHideShow"
       })
       .when("/page1", 
       {

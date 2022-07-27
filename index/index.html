@@ -2,8 +2,8 @@
 <html ng-app="myModData">
 <head>
   <title>Document</title>
+  <script src="/route.js"></script>
   <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
   <script src="indexModule.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
@@ -11,17 +11,17 @@
   <div ng-controller = "mainController">
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
-       <ul class="nav navbar-nav">          
+>        <ul class="nav navbar-nav">          
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#!hideAndShow">hideAndShow</a></li>
-          <li><a href="#!page1">page</a></li>
-          <li><a href="#!events">events</a></li>
-          <li><a href="#!locationServices">locationServices</a></li>
+          <li><a href="#!hideAndShow">Page 1</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
         </ul>
       </div>
     </nav>
   </div>
-  <div ng-view="">
+  <div>
+    
   </div>
 </body>
 </html>

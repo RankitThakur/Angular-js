@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="todoMod">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="todo.module.js"></script>
+  </head>
+  <body>
+    <div class="page-area" ng-controller="todoController">
+      <h1><span class=" text-center d-block p-2 bg-primary text-white">TODO APP</span></h1>
+      <br>
+      <div class = "container bpder-top pt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h1><span class=" text-center d-block p-2 bg-dark text-white">Enter Your Task</span></h1> 
+            <form>
+              <div class="from-group">
+                <input type="text" class="form-control" id="id" ng-model="iteam">
+                <button type="button" class="btn btn-primary right" ng-click="onAddProduct()">{{editMode? 'Update Task' : 'ADD TASK'}}</button>
+              </div>
+            </form>
+          </div>
+          <div class="cold-md-10">
+            <h2></h2>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Your Task</th>
+                  <th scope="col">Edit Task</th>
+                  <th scope="col">Delete Task</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="product in products">
+                  <td>{{product}}</td>
+                  <td>
+                    <button type="button" class="btn btn-danger" ng-click="deleteProduct(i)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

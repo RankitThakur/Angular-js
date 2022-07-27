@@ -1,0 +1,18 @@
+<html ng-app="myScope">
+  <head>
+    <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="scope.module.js"></script>
+  </head>
+  <body>
+    <!-- shared scope -- and Isolated Scope --> 
+    <div ng-controller="scopeCon">
+        <input type="text" placeholder="enter data" ng-model="nameData">
+        <h1 ng-click="fun()">{{ nameData }}</h1>
+        directives:1 <div message x="{{nameData*20}}">
+        </div>
+        directives:2 <div message x="{{nameData/2}}">
+        </div>
+    </div>
+    <div>{{nameData}}</div>
+  </body>
+</html>

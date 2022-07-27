@@ -1,0 +1,19 @@
+<html ng-app="httpModule">
+  <head>
+    <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="httpModule.js"></script>
+  </head>
+  <body>
+    <div ng-controller="httpController">
+      <ul>
+        <li ng-repeat= "itams in message">
+          <h1>{{itams.taskName}}</h1>
+          <h1>{{itams.status}}</h1>
+        </li>
+      </ul>
+      <!-- /////input http post method -->
+      TaskName: <input type="text" name="" id="" ng-model="data.taskName">
+      <button ng-click="postData()">Post</button>
+    </div>
+  </body>
+</html>
