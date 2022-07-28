@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS: realtime multiuser TODO list with Firebase</title>
+</head>
+
+<body>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<script src="https://code.angularjs.org/1.2.6/angular.min.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+
+    
+<body ng-controller="DemoCtrl" class="container"  ng-app="DemoApp">
+
+<h2>TODO APP</h2>
+ <!--ADD ITEM FORM-->
+ <form name="myForm">
+
+     <div>
+         <input type="text" name="todoNameField" ng-model="todoName" class="form-control" />
+         <button ng-click="addItem()"class="btn btn-primary" type="button">Save Todo</button>
+     </div>
+
+ </form>
+
+<hr>
+<!--TODO LIST-->
+<div ng-repeat="item in todos" class=" list-group-item row">
+
+    <div  class="col-md-6">
+        <!--todo label-->
+        <span>{{item.name}} </span></small>
+    </div>
+    <div  class="col-md-6">
+        <!--Delete Todo button-->
+        <a class="btn btn-danger" ng-click="removeItem($index, item, $event)">
+            <i class="icon-remove-sign"></i>Delete</a></div>
+</div>
+    <script src="todo.modules.js"></script>
+
+</body>
+</html>

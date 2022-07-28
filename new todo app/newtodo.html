@@ -1,0 +1,36 @@
+<html ng-app="todoApp">
+  <head>
+    <title>Todo</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="https://code.angularjs.org/1.2.6/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="todo.modules.js"></script>
+  </head>
+  <body>
+    <div ng-controller="todoAppCon" class="page-area" >
+      <h1><span class=" text-center d-block p-2 bg-primary text-white">TODO APP</span></h1>
+        <!--ADD ITEM FORM-->
+      <form name="myForm">
+        <div>
+         <input type="text" name="todoNameField" ng-model="todoName" class="form-control" />
+         <button ng-click="addItem()"class="btn btn-primary" type="button">Save Todo</button>
+        </div>  
+        <input type="text" name="todoNameField" ng-model="userName" class="" />
+        <button type="button" class="btn btn-success" ng-click="updateIteam()">Update</button>
+      </form>
+      <!--TODO LIST-->
+      <div ng-repeat="item in todos" class=" list-group-item row">
+        <div  class="col-md-6">
+        <!--todo label-->
+        <span>{{item.name}} </span></small>
+      </div>
+      <div  class="col-md-6">
+        <!--Delete Todo button-->
+        <a class="btn btn-danger" ng-click="removeItem($index, item, $event)">Delete</a>
+      </div>
+      <button type="button" class="btn btn-success" ng-click="editIteam()">edit</button>
+    </div>
+  </body>
+</html>

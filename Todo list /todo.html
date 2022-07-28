@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="todo.module.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+
   </head>
   <body>
     <div class="page-area" ng-controller="todoController">
@@ -15,8 +19,10 @@
             <h1><span class=" text-center d-block p-2 bg-dark text-white">Enter Your Task</span></h1> 
             <form>
               <div class="from-group">
-                <input type="text" class="form-control" id="id" ng-model="iteam">
-                <button type="button" class="btn btn-primary right" ng-click="onAddProduct()">{{editMode? 'Update Task' : 'ADD TASK'}}</button>
+                <input type="text" class="form-control" id="id" ng-model="data.name">
+                <button type="button" class="btn btn-primary right"  ng-click="postData()">{{editMode? 'Update Task' : 'ADD TASK'}}</button> <br>
+                <input type="text" ng-model="editItem.userName">
+                <button type="button" class="btn btn-success" ng-click="updateUser()">Update</button>
               </div>
             </form>
           </div>
@@ -25,6 +31,7 @@
             <table class="table">
               <thead class="thead-dark">
                 <tr>
+                  <th scope="col">s:no</th>
                   <th scope="col">Your Task</th>
                   <th scope="col">Edit Task</th>
                   <th scope="col">Delete Task</th>
@@ -32,9 +39,14 @@
               </thead>
               <tbody>
                 <tr ng-repeat="product in products">
-                  <td>{{product}}</td>
+                  <td>{{$index+1}}</td>
+                  <td>{{product}}</td>   
+
                   <td>
-                    <button type="button" class="btn btn-danger" ng-click="deleteProduct(i)">Delete</button>
+                    <button type="button" class="btn btn-success" ng-click="editItem()">edit</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger" ng-click="deleteData()">Delete</button>
                   </td>
                 </tr>
               </tbody>
@@ -42,7 +54,6 @@
           </div>
         </div>
       </div>
-    </div>
-    
+    </div>  
   </body>
 </html>
