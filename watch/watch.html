@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>
+    AngularJs $watch() Function</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+      var app = angular.module('watchApp', []);
+      app.controller('watchCtrl', function ($scope) {
+        $scope.count = -1 ;
+        $scope.$watch('txtval', function (newval, oldval) {      
+          console.log(newval) 
+          console.log(oldval)  
+          $scope.count = $scope.count+1;
+          
+        });
+      });
+
+      </script> 
+  </head>
+  <body>
+      <div ng-app="watchApp" ng-controller="watchCtrl">
+        <h2>AngularJS $watch Function</h2>
+        Enter Text:<input type="text" ng-model="txtval" /><br /><br />
+        <span style="color:red "> {{txtval}}</span><br>
+        <span style="color:green">No. of Times $watch() Function Fired: {{count}}</span>
+      </div>
+  </body>
+</html>

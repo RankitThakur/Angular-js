@@ -7,6 +7,7 @@
     <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="todo.modules.js"></script>
+    <script src = "pagination.js"></script>
   </head>
   <body>
     <div ng-controller="todoAppCon" class="page-area" >
@@ -21,8 +22,8 @@
         <button type="button" class="btn btn-success" ng-click="updateIteam()">Update</button>
       </form>
       <!--TODO LIST-->
-      <div ng-repeat="item in todos" class=" list-group-item row">
-        <div  class="col-md-6">
+      <div ng-repeat="item in todos | itemsPerPage:1 | limitTo: pageSize" class="list-group-item row">
+        <div class="col-md-6">
         <!--todo label-->
         <span>{{item.name}} </span></small>
       </div>
@@ -31,6 +32,7 @@
         <a class="btn btn-danger" ng-click="removeItem($index, item, $event)">Delete</a>
       </div>
       <button type="button" class="btn btn-success" ng-click="editIteam()">edit</button>
+      <dir-pagination-controls></dir-pagination-controls>
     </div>
   </body>
 </html>

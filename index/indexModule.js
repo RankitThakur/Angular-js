@@ -7,12 +7,18 @@ app.config(
       .when("/hideAndShow", 
       {
         templateUrl:"/hideshow/hideAndShow.html",
-        controller: "myHideShow"
+        controller: "myHideShow",
+        resolve:{
+          massege: function(){
+            return console.log("loding soon ")
+          }
+        }
+
       })
       .when("/page1", 
       {
         templateUrl:"/page1.html",
-        controller: "myDataController2"
+        controller: "myDataController2",
       })
       .when("/events",
       {

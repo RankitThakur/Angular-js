@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+      var app = angular.module("myPerentScope", [])
+      app.controller("myCntl", function($scope){
+        $scope.name = "rankit";
+        $scope.midName = "singh";
+      });
+      app.controller("myCntl2", function($scope){
+        $scope.lastName = "thakur";
+      });
+      app.controller("myCntl3", function($scope){
+        $scope.lastName2 = "thakur2"
+      });
+      </script>  
+    <title>Document</title>
+  </head>
+  <body ng-app="myPerentScope">
+      <div ng-controller="myCntl">
+        {{name}}  
+        <div ng-controller="myCntl2">
+          {{midName}}
+          </div>
+          <div ng-controller="myCntl3">
+            {{lastName2}}  
+        </div>
+      </div>
+  </body>
+</html>

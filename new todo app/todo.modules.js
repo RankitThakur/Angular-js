@@ -3,6 +3,8 @@ var myApp = angular.module('todoApp', ['firebase']);
 myApp.constant("FIREBASE_URL", "https://newdatatodo-default-rtdb.firebaseio.com/" )
 myApp.controller("todoAppCon", function ($scope, $firebase, FIREBASE_URL) {
   $scope.todoName = "";
+  $scope.startForm = 1
+  $scope.pageSize = 10
   var todosRef = new Firebase(FIREBASE_URL);
   $scope.editIteam = function(item){
     $scope.userName = this.item.name;
