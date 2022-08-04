@@ -1,0 +1,28 @@
+{
+  "name": "angular-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "angularjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RankitThakur/Angular-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RankitThakur/Angular-js/issues"
+  },
+  "homepage": "https://github.com/RankitThakur/Angular-js#readme",
+  "dependencies": {
+    "angular-mocks": "^1.8.3",
+    "jasmine-core": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-jasmine": "^5.1.0"
+  }
+
+}
